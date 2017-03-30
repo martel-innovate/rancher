@@ -24,7 +24,7 @@ RUN cp /usr/lib/jvm/zulu-8-amd64/jre/lib/security/US_export_policy.jar /usr/lib/
 COPY bin/* /usr/bin/
 
 ENV CATTLE_HOME /var/lib/cattle
-ENV DEFAULT_CATTLE_API_UI_INDEX //github.com/martel-innovate/ui/raw/master/dist/static/2.0.0.tar.gz
+ENV DEFAULT_CATTLE_API_UI_INDEX //github.com/martel-innovate/ui/raw/master/dist/static/2.0.0
 ENV CATTLE_API_UI_URL //releases.rancher.com/api-ui/1.0.8
 ENV CATTLE_DB_CATTLE_DATABASE mysql
 ENV CATTLE_USE_LOCAL_ARTIFACTS true
