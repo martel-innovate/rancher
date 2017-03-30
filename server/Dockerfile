@@ -24,7 +24,7 @@ RUN cp /usr/lib/jvm/zulu-8-amd64/jre/lib/security/US_export_policy.jar /usr/lib/
 COPY bin/* /usr/bin/
 
 ENV CATTLE_HOME /var/lib/cattle
-ENV DEFAULT_CATTLE_API_UI_INDEX //releases.rancher.com/ui/1.5.8
+ENV DEFAULT_CATTLE_API_UI_INDEX //github.com/martel-innovate/ui/raw/master/dist/static/1.4.1.tar.gz
 ENV CATTLE_API_UI_URL //releases.rancher.com/api-ui/1.0.8
 ENV CATTLE_DB_CATTLE_DATABASE mysql
 ENV CATTLE_USE_LOCAL_ARTIFACTS true
@@ -52,7 +52,7 @@ ENV DEFAULT_CATTLE_CATALOG_URL='{"catalogs":{"community":{"url":"https://git.ran
 
 EXPOSE 3306
 ENV CATTLE_CATTLE_VERSION v0.177.10
-ADD https://github.com/rancherio/cattle/releases/download/${CATTLE_CATTLE_VERSION}/cattle.jar /usr/share/cattle/
+ADD https://github.com/martel-innovate/cattle/raw/master/dist/artifacts/cattle.jar /usr/share/cattle/
 
 RUN cd / && for i in $(ls /s6-statics/*static.tar.gz);do tar -C /usr -zxvf $i;done && rm -rf /s6-statics/*static.tar.gz && \
     mkdir -p $CATTLE_HOME && \
